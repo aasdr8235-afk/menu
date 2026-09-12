@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Fratello — Menu Digital Plein Écran</title>
+  <meta name="description" content="Découvrez le livre de menu interactif et prestigieux Fratello : Burgers gourmets, Box croustillantes, Pizzas artisanales, Ojja et grillades d'exception." />
+  <meta name="theme-color" content="#060606" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo_clean_final.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- 1. BRANDED LOADING EXPERIENCE -->
+  <div id="preloader" aria-hidden="false" role="progressbar" aria-label="Chargement du menu Fratello">
+    <div class="loader-content">
+      <div class="loader-logo-wrap">
+        <img src="assets/img/logo_clean_final.png" alt="Fratello Logo" />
+      </div>
+      <div class="loader-ornament">
+        <svg viewBox="0 0 100 20" width="90" height="18" fill="#d4af37">
+          <path d="M50 0 L55 10 L70 4 L60 16 L90 10 L68 18 L50 13 L32 18 L10 10 L40 16 L30 4 L45 10 Z" />
+        </svg>
+      </div>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill"></div>
+      </div>
+      <div class="loader-subtitle">Menu Gastronomique & Saveurs Artisanales</div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN APP CONTAINER -->
+  <main class="app-container">
+
+    <!-- Top Brand Header Bar -->
+    <header class="top-brand-bar">
+      <a href="#menuCover" class="brand-crest-small" id="brandHomeLink" aria-label="Accueil Fratello">
+        <img src="assets/img/logo_clean_final.png" alt="Fratello Fast Food" class="brand-logo-nav" />
+      </a>
+
+      <div class="top-actions">
+        <button class="btn-luxury-sm" id="btnToggleFullscreen" aria-label="Activer le mode plein écran" title="Plein Écran">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" id="fullscreenIcon">
+            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+          </svg>
+          <span class="btn-text" id="fullscreenText">Plein Écran</span>
+        </button>
+
+        <button class="btn-luxury-sm" id="btnTableOfContents" aria-haspopup="dialog" aria-expanded="false" aria-label="Ouvrir le sommaire" title="Sommaire">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+          <span class="btn-text">Sommaire</span>
+        </button>
+
+        <button class="btn-luxury-sm" id="btnViewScan" aria-haspopup="dialog" aria-expanded="false" aria-label="Voir l'édition imprimée originale" title="Édition Papier" data-scan="assets/img/2026-09-07_08-51.png" data-title="Nos Burgers & Box">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+          </svg>
+          <span class="btn-text">Édition Papier</span>
+        </button>
+
+        <button class="btn-luxury-sm" id="btnCloseBook" aria-label="Fermer le menu et retourner à la couverture" title="Couverture">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"/>
+          </svg>
+          <span class="btn-text">Couverture</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 3. INTERACTIVE 3D BOOK STAGE (Maximized Full Screen Viewport) -->
+    <section class="book-stage" id="bookStage" aria-label="Livre de Menu Interactif Fratello">
+      <div class="book-wrapper" id="bookWrapper">
+
+        <!-- Physical Closed Cover -->
+        <article class="menu-cover" id="menuCover" role="region" aria-label="Couverture du Menu Fratello">
+          <div class="cover-frame-outer"></div>
+          <div class="cover-frame-inner"></div>
+
+          <!-- Botanical Corners -->
+          <div class="botanical-corner top-left"></div>
+          <div class="botanical-corner top-right"></div>
+          <div class="botanical-corner bottom-left"></div>
+          <div class="botanical-corner bottom-right"></div>
+
+          <div class="cover-header-tag">Maison Fondée de Haute Gastronomie</div>
+
+          <div class="cover-main-content">
+            <img src="assets/img/logo_clean_final.png" alt="Fratello Logo" class="cover-logo-img" />
+            <h1 class="cover-book-title">Carte du Restaurant</h1>
+
+            <div class="cover-divider-flourish">
+              <svg width="110" height="14" viewBox="0 0 100 14" fill="#d4af37">
+                <path d="M0 7 Q25 0 50 7 Q75 14 100 7 Q75 0 50 7 Q25 14 0 7" />
+              </svg>
+            </div>
+
+            <p class="cover-description">
+              Une immersion sensorielle au coeur des créations artisanales italiennes & méditerranéennes. Viandes persillées, burgers signatures, pâtes fraîches et pizzas au feu de bois.
+            </p>
+
+            <button class="btn-open-menu" id="btnOpenMenu" aria-label="Ouvrir le menu Fratello">
+              <span>Ouvrir le Menu</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="cover-footer">Feuilletez pour découvrir notre sélection</div>
+        </article>
+
+        <!-- Pages Container (Populated dynamically by script.js) -->
+        <div class="book-stack-edge left" aria-hidden="true"></div>
+        <div class="book-stack-edge right" aria-hidden="true"></div>
+        <div class="book-spine-crease" id="bookSpineCrease" aria-hidden="true"></div>
+
+        <div class="menu-book" id="menuBook" role="region" aria-live="polite"></div>
+
+      </div>
+    </section>
+
+    <!-- 4. BOTTOM NAVIGATION DOCK -->
+    <nav class="bottom-dock" aria-label="Navigation du menu">
+      <button class="nav-arrow-btn" id="btnPrev" aria-label="Page précédente" disabled>
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+
+      <div class="page-indicator-pill">
+        <span class="indicator-counter" id="pageCounter">01 / 08</span>
+        <ul class="page-dots-list" id="pageDots" role="tablist" aria-label="Sélecteur de page"></ul>
+      </div>
+
+      <button class="nav-arrow-btn" id="btnNext" aria-label="Page suivante">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </nav>
+
+  </main>
+
+  <!-- 5. TABLE OF CONTENTS MODAL -->
+  <div class="modal-overlay" id="tocModal" role="dialog" aria-modal="true" aria-labelledby="tocTitle" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="closeTocBtn" aria-label="Fermer le sommaire">&times;</button>
+      <h2 class="modal-title" id="tocTitle">Sommaire de la Carte</h2>
+      <ul class="toc-list" id="tocList"></ul>
+    </div>
+  </div>
+
+  <!-- 6. ORIGINAL PRINT SCAN VIEWER MODAL -->
+  <div class="modal-overlay" id="scanModal" role="dialog" aria-modal="true" aria-labelledby="scanModalTitle" aria-hidden="true">
+    <div class="modal-container scan-viewer-container">
+      <button class="modal-close-btn" id="closeScanBtn" aria-label="Fermer la vue originale">&times;</button>
+      <h2 class="modal-title" id="scanModalTitle">Édition Imprimée Officielle</h2>
+      <p style="font-size: 0.85rem; color: var(--cream-dim); font-style: italic; margin-bottom: 8px;">
+        Document de référence original du Restaurant Fratello
+      </p>
+      <div class="scan-image-wrap">
+        <img id="scanModalImg" src="assets/img/2026-09-07_08-51.png" alt="Scan original du menu Fratello" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. NOSCRIPT ACCESSIBILITY FALLBACK (Vertical Scroll View) -->
+  <noscript>
+    <div class="no-js-menu-view">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <img src="assets/img/logo_clean_final.png" alt="Fratello Restaurant" style="width: 200px; margin: 0 auto 16px;" />
+        <h1 style="font-family: var(--font-serif-classic); color: var(--gold-light); font-size: 1.6rem; letter-spacing: 0.15em;">CARTE OFFICIELLE DU RESTAURANT</h1>
+        <p style="font-style: italic; color: var(--cream-dim);">Consultez l'ensemble de notre offre gastronomique ci-dessous.</p>
+      </div>
+
+      <!-- NOS BURGERS -->
+      <section style="margin-bottom: 35px; border-bottom: 1px solid var(--gold-border-dim); padding-bottom: 25px;">
+        <h2 style="font-family: var(--font-serif-classic); color: var(--gold-warm); font-size: 1.3rem; margin-bottom: 12px;">NOS BURGERS</h2>
+        <img src="assets/img/burger-hero-new.jpg" alt="Burger Boeuf Fratello" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 14px;" />
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>BURGER BOEUF</span> <strong style="color: var(--gold-light);">13.0 DT</strong></li>
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>BIG BURGER BOEUF</span> <strong style="color: var(--gold-light);">15.0 DT</strong></li>
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>CHEESE BURGER</span> <strong style="color: var(--gold-light);">13.0 DT</strong></li>
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>BIG CHEESE BURGER</span> <strong style="color: var(--gold-light);">15.0 DT</strong></li>
+        </ul>
+      </section>
+
+      <!-- NOS BOX -->
+      <section style="margin-bottom: 35px; border-bottom: 1px solid var(--gold-border-dim); padding-bottom: 25px;">
+        <h2 style="font-family: var(--font-serif-classic); color: var(--gold-warm); font-size: 1.3rem; margin-bottom: 12px;">NOS BOX</h2>
+        <img src="assets/img/box-chicken-new.jpg" alt="Box Fratello" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 14px;" />
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>BOX KIDS (Nuggets, boule fromage, gougant, escalope, escalope pané, chicken corn, frite)</span> <strong style="color: var(--gold-light);">22 DT</strong></li>
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>CRISPY BOX (Crispy escalope, frite)</span> <strong style="color: var(--gold-light);">25 DT</strong></li>
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>CHICKEN CORN (1 PIÈCE)</span> <strong style="color: var(--gold-light);">6.5 DT</strong></li>
+          <li style="display: flex; justify-content: space-between; font-size: 1.1rem;"><span>POTATOES</span> <strong style="color: var(--gold-light);">6.5 DT</strong></li>
+        </ul>
+      </section>
+
+      <!-- SUPPLÉMENTS -->
+      <section style="margin-bottom: 35px; border-bottom: 1px solid var(--gold-border-dim); padding-bottom: 25px;">
+        <h2 style="font-family: var(--font-serif-classic); color: var(--gold-warm); font-size: 1.3rem; margin-bottom: 12px;">SUPPLÉMENTS</h2>
+        <img src="assets/img/supplements-frites.jpg" alt="Suppléments Fratello" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 14px;" />
+        <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <li style="display: flex; justify-content: space-between;"><span>PORTION FRITES</span> <strong style="color: var(--gold-light);">3.5 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>GRUYÈRE</span> <strong style="color: var(--gold-light);">4.5 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>JAMBON</span> <strong style="color: var(--gold-light);">2 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>GOUDA</span> <strong style="color: var(--gold-light);">4.5 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>FROMAGE</span> <strong style="color: var(--gold-light);">2 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>CHAMPIGNON</span> <strong style="color: var(--gold-light);">3.5 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>ESCALOPE</span> <strong style="color: var(--gold-light);">4 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>IMPORTER</span> <strong style="color: var(--gold-light);">2.5 DT</strong></li>
+        </ul>
+      </section>
+
+      <!-- NOS PIZZA -->
+      <section style="margin-bottom: 35px; border-bottom: 1px solid var(--gold-border-dim); padding-bottom: 25px;">
+        <h2 style="font-family: var(--font-serif-classic); color: var(--gold-warm); font-size: 1.3rem; margin-bottom: 12px;">NOS PIZZA</h2>
+        <img src="assets/img/pizza-hero-new.jpg" alt="Pizza Fratello" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 14px;" />
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA MARGHERITA</span> <span>M: 10 DT | L: 12 DT | XL: 22 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA VÉGÉTARIENNE</span> <span>M: 11 DT | L: 14 DT | XL: 25 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA NEPTUNE</span> <span>M: 13 DT | L: 17 DT | XL: 30 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA 4 SAISONS</span> <span>M: 18 DT | L: 22 DT | XL: 35 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA TEX MEX</span> <span>M: 16 DT | L: 20 DT | XL: 32 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA ORIENTALE</span> <span>M: 16 DT | L: 20 DT | XL: 32 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA CHEF</span> <span>M: 18 DT | L: 22 DT | XL: 38 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA PEPPERONI</span> <span>M: 16 DT | L: 20 DT | XL: 33 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA FRATELLO</span> <span>L: 30 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA 4 FROMAGE</span> <span>M: 19 DT | L: 24 DT | XL: 36 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA FRUIT DE MER</span> <span>L: 28 DT | XL: 45 DT</span></li>
+          <li style="display: flex; justify-content: space-between;"><span>PIZZA REGINA</span> <span>M: 13 DT | L: 16 DT | XL: 30 DT</span></li>
+        </ul>
+      </section>
+
+      <!-- NOS OJJA & GRILLADES -->
+      <section style="margin-bottom: 35px; border-bottom: 1px solid var(--gold-border-dim); padding-bottom: 25px;">
+        <h2 style="font-family: var(--font-serif-classic); color: var(--gold-warm); font-size: 1.3rem; margin-bottom: 12px;">NOS OJJA & GRILLADES</h2>
+        <img src="assets/img/ojja-seafood-new.jpg" alt="Ojja Fratello" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 14px;" />
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="display: flex; justify-content: space-between;"><span>OJJA MERGUEZ</span> <strong style="color: var(--gold-light);">15 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>OJJA ESCALOPE</span> <strong style="color: var(--gold-light);">13.5 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>OJJA FRUITS DE MER</span> <strong style="color: var(--gold-light);">28 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>OJJA ROYAL</span> <strong style="color: var(--gold-light);">35 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>ESCALOPE GRILLÉ</span> <strong style="color: var(--gold-light);">15 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>CORDON BLEU</span> <strong style="color: var(--gold-light);">20 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>GRILLADE MIXTE</span> <strong style="color: var(--gold-light);">40 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>STEAK MEXICAIN 220GR</span> <strong style="color: var(--gold-light);">30 DT</strong></li>
+        </ul>
+      </section>
+
+      <!-- NOS POISSONS & PÂTES -->
+      <section style="margin-bottom: 35px; border-bottom: 1px solid var(--gold-border-dim); padding-bottom: 25px;">
+        <h2 style="font-family: var(--font-serif-classic); color: var(--gold-warm); font-size: 1.3rem; margin-bottom: 12px;">NOS POISSONS & PÂTES</h2>
+        <img src="assets/img/fish-dorade-new.jpg" alt="Dorade Royale" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 14px;" />
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="display: flex; justify-content: space-between;"><span>DORADE ROYALE</span> <strong style="color: var(--gold-light);">22 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>LOUP DE MER</span> <strong style="color: var(--gold-light);">24 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>CHEVRETTE SAUTÉ À L'AIL</span> <strong style="color: var(--gold-light);">28 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>PLAT PIRATE</span> <strong style="color: var(--gold-light);">40 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>SALADE CÉSAR</span> <strong style="color: var(--gold-light);">20 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>SPAGHETTI BOLOGNAISE</span> <strong style="color: var(--gold-light);">20 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>SPAGHETTI CARBONARA</span> <strong style="color: var(--gold-light);">28 DT</strong></li>
+        </ul>
+      </section>
+
+      <!-- NOS SANDWICHS & TACOS -->
+      <section style="margin-bottom: 35px;">
+        <h2 style="font-family: var(--font-serif-classic); color: var(--gold-warm); font-size: 1.3rem; margin-bottom: 12px;">SANDWICHS & TACOS</h2>
+        <img src="assets/img/tacos-gourmet-new.jpg" alt="Tacos Fratello" style="width: 100%; max-width: 400px; border-radius: 4px; margin-bottom: 14px;" />
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+          <li style="display: flex; justify-content: space-between;"><span>BAGUETTE FARCIE THON / VOLAILLE</span> <strong style="color: var(--gold-light);">11 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>BAGUETTE FARCIE VIANDE HACHÉE</span> <strong style="color: var(--gold-light);">16 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>MAKLOUB</span> <strong style="color: var(--gold-light);">9.50 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>LIBANAIS</span> <strong style="color: var(--gold-light);">12 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>TACOS SIMPLE / MAXI</span> <strong style="color: var(--gold-light);">11 / 14 DT</strong></li>
+          <li style="display: flex; justify-content: space-between;"><span>TACOS FRATELLO SIGNATURE</span> <strong style="color: var(--gold-light);">19 DT</strong></li>
+        </ul>
+      </section>
+    </div>
+  </noscript>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
