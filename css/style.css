@@ -2629,3 +2629,106 @@ noscript .bottom-dock,
 noscript #preloader {
   display: none !important;
 }
+
+/* ==========================================================================
+   CREATOR CREDIT — Discreet Professional Signature
+   ========================================================================== */
+.creator-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(212, 175, 55, 0.12);
+  width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.credit-label {
+  font-family: var(--font-body-modern);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: rgba(248, 243, 232, 0.35);
+}
+
+.credit-name {
+  font-weight: 500;
+  color: rgba(212, 175, 55, 0.50);
+  letter-spacing: 0.06em;
+}
+
+.credit-ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body-modern);
+  font-size: 0.50rem;
+  letter-spacing: 0.04em;
+  color: rgba(248, 243, 232, 0.30);
+  text-decoration: none;
+  padding: 14px 16px;
+  margin: -12px -14px;
+  border-radius: 6px;
+  transition: color 0.25s ease;
+}
+
+.credit-ig-icon {
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
+  flex-shrink: 0;
+}
+
+.credit-ig-link:hover,
+.credit-ig-link:focus-visible {
+  color: rgba(212, 175, 55, 0.65);
+}
+
+.credit-ig-link:hover .credit-ig-icon,
+.credit-ig-link:focus-visible .credit-ig-icon {
+  opacity: 0.75;
+}
+
+.credit-ig-link:focus-visible {
+  outline: 1px solid rgba(212, 175, 55, 0.3);
+  outline-offset: -2px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .creator-credit {
+    margin-top: 6px;
+    padding-top: 6px;
+    width: 120px;
+    gap: 2px;
+    margin-bottom: max(env(safe-area-inset-bottom, 0px), 2px);
+  }
+
+  .credit-label {
+    font-size: 0.50rem;
+  }
+
+  .credit-ig-link {
+    font-size: 0.46rem;
+    padding: 14px 18px;
+    margin: -12px -16px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .creator-credit {
+    margin-top: 4px;
+    padding-top: 4px;
+    width: 110px;
+  }
+
+  .credit-label {
+    font-size: 0.48rem;
+  }
+
+  .credit-ig-link {
+    font-size: 0.44rem;
+  }
+}
