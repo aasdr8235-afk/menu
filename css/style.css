@@ -2631,104 +2631,201 @@ noscript #preloader {
 }
 
 /* ==========================================================================
-   CREATOR CREDIT — Discreet Professional Signature
+   CREATOR SIGNATURE ZONE — Art-Directed Maker's Mark
    ========================================================================== */
-.creator-credit {
+.cover-footer-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(212, 175, 55, 0.12);
-  width: 140px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 10px;
+  width: 100%;
+  max-width: 380px;
+  z-index: 15;
+  margin-top: auto;
 }
 
-.credit-label {
-  font-family: var(--font-body-modern);
-  font-size: 0.55rem;
-  letter-spacing: 0.08em;
-  color: rgba(248, 243, 232, 0.35);
-}
-
-.credit-name {
-  font-weight: 500;
-  color: rgba(212, 175, 55, 0.50);
-  letter-spacing: 0.06em;
-}
-
-.credit-ig-link {
-  display: inline-flex;
+.creator-signature-zone {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 4px;
-  font-family: var(--font-body-modern);
-  font-size: 0.50rem;
-  letter-spacing: 0.04em;
-  color: rgba(248, 243, 232, 0.30);
+  opacity: 0;
+  transform: translateY(6px);
+  animation: signatureEntrance 0.85s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+  pointer-events: auto;
+  user-select: none;
+}
+
+@keyframes signatureEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signature-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-pure);
+  opacity: 0.5;
+  line-height: 0;
+  margin-bottom: 2px;
+}
+
+.signature-ornament-svg {
+  display: block;
+}
+
+.signature-mark {
+  font-family: var(--font-serif-classic);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  text-shadow:
+    0 1px 4px rgba(212, 175, 55, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.95);
+  line-height: 1.15;
+  padding-left: 0.32em;
+}
+
+.signature-ig-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
   text-decoration: none;
-  padding: 14px 16px;
-  margin: -12px -14px;
-  border-radius: 6px;
-  transition: color 0.25s ease;
+  padding: 10px 16px;
+  margin: -6px -12px;
+  border-radius: 4px;
+  min-height: 44px;
+  box-sizing: border-box;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  user-select: none;
 }
 
-.credit-ig-icon {
-  opacity: 0.45;
-  transition: opacity 0.25s ease;
+.signature-ig-icon {
+  color: var(--gold-pure);
+  opacity: 0.5;
   flex-shrink: 0;
+  transition: opacity 0.25s ease, color 0.25s ease;
 }
 
-.credit-ig-link:hover,
-.credit-ig-link:focus-visible {
-  color: rgba(212, 175, 55, 0.65);
+.signature-ig-tag {
+  font-family: var(--font-serif-classic);
+  font-size: 0.44rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  opacity: 0.48;
+  transition: opacity 0.25s ease;
+  line-height: 1;
 }
 
-.credit-ig-link:hover .credit-ig-icon,
-.credit-ig-link:focus-visible .credit-ig-icon {
-  opacity: 0.75;
+.signature-ig-dot {
+  color: var(--gold-dark);
+  opacity: 0.55;
+  font-size: 0.44rem;
+  line-height: 1;
 }
 
-.credit-ig-link:focus-visible {
-  outline: 1px solid rgba(212, 175, 55, 0.3);
+.signature-ig-handle {
+  font-family: var(--font-sans-subtle);
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+  color: var(--cream-soft);
+  opacity: 0.52;
+  transition: opacity 0.25s ease, color 0.25s ease;
+  line-height: 1;
+}
+
+.signature-ig-link:hover .signature-ig-icon,
+.signature-ig-link:focus-visible .signature-ig-icon {
+  color: var(--gold-bright);
+  opacity: 0.95;
+}
+
+.signature-ig-link:hover .signature-ig-handle,
+.signature-ig-link:focus-visible .signature-ig-handle {
+  color: var(--gold-light);
+  opacity: 0.95;
+}
+
+.signature-ig-link:hover .signature-ig-tag,
+.signature-ig-link:focus-visible .signature-ig-tag {
+  opacity: 0.8;
+}
+
+.signature-ig-link:focus-visible {
+  outline: 1px solid rgba(212, 175, 55, 0.4);
   outline-offset: -2px;
 }
 
-/* Mobile adjustments */
+/* Mobile art-direction for creator signature */
 @media (max-width: 991px) {
-  .creator-credit {
-    margin-top: 6px;
-    padding-top: 6px;
-    width: 120px;
-    gap: 2px;
+  .cover-footer-wrap {
+    gap: 5px;
     margin-bottom: max(env(safe-area-inset-bottom, 0px), 2px);
   }
 
-  .credit-label {
-    font-size: 0.50rem;
+  .signature-mark {
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    padding-left: 0.28em;
   }
 
-  .credit-ig-link {
-    font-size: 0.46rem;
-    padding: 14px 18px;
-    margin: -12px -16px;
-  }
-}
-
-/* Very small phones */
-@media (max-width: 380px) {
-  .creator-credit {
-    margin-top: 4px;
-    padding-top: 4px;
-    width: 110px;
+  .signature-ornament-svg {
+    width: 64px;
   }
 
-  .credit-label {
+  .signature-ig-tag {
+    font-size: 0.40rem;
+    letter-spacing: 0.18em;
+  }
+
+  .signature-ig-handle {
     font-size: 0.48rem;
   }
 
-  .credit-ig-link {
+  .signature-ig-link {
+    padding: 10px 14px;
+    margin: -6px -10px;
+    min-height: 44px;
+  }
+}
+
+/* Extra small mobile (e.g. iPhone SE 375x667) */
+@media (max-width: 380px) {
+  .cover-footer-wrap {
+    gap: 3px;
+  }
+
+  .signature-mark {
+    font-size: 0.56rem;
+    letter-spacing: 0.24em;
+    padding-left: 0.24em;
+  }
+
+  .signature-ornament-svg {
+    width: 54px;
+  }
+
+  .signature-ig-tag {
+    font-size: 0.38rem;
+  }
+
+  .signature-ig-handle {
     font-size: 0.44rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creator-signature-zone {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
