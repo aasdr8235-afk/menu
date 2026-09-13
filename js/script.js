@@ -486,6 +486,37 @@
         `;
       }
 
+      const isFinalPage = (index === activePages.length - 1);
+      const finalPageSignatureHtml = isFinalPage ? `
+          <div class="creator-imprint final-page-imprint" role="contentinfo" aria-label="Créé par MOUHIB MH">
+            <div class="creator-ornament" aria-hidden="true">
+              <svg viewBox="0 0 100 8" width="70" height="6" class="creator-ornament-svg">
+                <line x1="0" y1="4" x2="38" y2="4" stroke="#d4af37" stroke-width="0.75" opacity="0.65" />
+                <polygon points="50,1 53.5,4 50,7 46.5,4" fill="#d4af37" />
+                <circle cx="42" cy="4" r="0.8" fill="#d4af37" opacity="0.8" />
+                <circle cx="58" cy="4" r="0.8" fill="#d4af37" opacity="0.8" />
+                <line x1="62" y1="4" x2="100" y2="4" stroke="#d4af37" stroke-width="0.75" opacity="0.65" />
+              </svg>
+            </div>
+            <div class="creator-label">Créé par</div>
+            <div class="creator-name">MOUHIB MH</div>
+            <a href="https://www.instagram.com/mh_mouhib" target="_blank" rel="noopener noreferrer" class="creator-link" aria-label="Instagram @mh_mouhib">
+              <svg class="creator-ig-icon" viewBox="0 0 24 24" width="11" height="11" fill="currentColor" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 011.47.957c.453.453.773.898.957 1.47.163.46.349 1.26.404 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.241 1.97-.404 2.43a4.088 4.088 0 01-.957 1.47 4.088 4.088 0 01-1.47.957c-.46.163-1.26.349-2.43.404-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.97-.241-2.43-.404a4.088 4.088 0 01-1.47-.957 4.088 4.088 0 01-.957-1.47c-.163-.46-.349-1.26-.404-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.055-1.17.241-1.97.404-2.43a4.088 4.088 0 01.957-1.47A4.088 4.088 0 015.064 2.293c.46-.163 1.26-.349 2.43-.404C8.76 1.831 9.14 1.819 12 1.819zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.876 5.876 0 001.384 2.126 5.876 5.876 0 002.126 1.384c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.763.5-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+              </svg>
+              <span>@mh_mouhib</span>
+            </a>
+            <div class="creator-ornament" aria-hidden="true">
+              <svg viewBox="0 0 100 8" width="70" height="6" class="creator-ornament-svg">
+                <line x1="0" y1="4" x2="38" y2="4" stroke="#d4af37" stroke-width="0.75" opacity="0.65" />
+                <polygon points="50,1 53.5,4 50,7 46.5,4" fill="#d4af37" />
+                <circle cx="42" cy="4" r="0.8" fill="#d4af37" opacity="0.8" />
+                <circle cx="58" cy="4" r="0.8" fill="#d4af37" opacity="0.8" />
+                <line x1="62" y1="4" x2="100" y2="4" stroke="#d4af37" stroke-width="0.75" opacity="0.65" />
+              </svg>
+            </div>
+          </div>` : "";
+
       pageEl.innerHTML = `
         <div class="page-front">
           <div class="page-spine"></div>
@@ -522,22 +553,7 @@
             ${bodyContentHtml}
           </div>
 
-          <div class="page-maker-mark" role="contentinfo" aria-label="Signature du créateur MOUHIB MH">
-            <div class="maker-mark-ornament" aria-hidden="true">
-              <svg viewBox="0 0 54 8" width="44" height="7" class="maker-ornament-svg">
-                <line x1="0" y1="4" x2="18" y2="4" stroke="#d4af37" stroke-width="0.75" opacity="0.65" />
-                <polygon points="27,1 30,4 27,7 24,4" fill="#d4af37" />
-                <line x1="36" y1="4" x2="54" y2="4" stroke="#d4af37" stroke-width="0.75" opacity="0.65" />
-              </svg>
-            </div>
-            <div class="maker-mark-name">MOUHIB MH</div>
-            <a href="https://instagram.com/mouhib_mh" target="_blank" rel="noopener noreferrer" class="maker-mark-link" aria-label="Instagram @mouhib_mh">
-              <svg class="maker-mark-ig-icon" viewBox="0 0 24 24" width="10" height="10" fill="currentColor" aria-hidden="true">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.43.403a4.088 4.088 0 011.47.957c.453.453.773.898.957 1.47.163.46.349 1.26.404 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.241 1.97-.404 2.43a4.088 4.088 0 01-.957 1.47 4.088 4.088 0 01-1.47.957c-.46.163-1.26.349-2.43.404-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.97-.241-2.43-.404a4.088 4.088 0 01-1.47-.957 4.088 4.088 0 01-.957-1.47c-.163-.46-.349-1.26-.404-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.055-1.17.241-1.97.404-2.43a4.088 4.088 0 01.957-1.47A4.088 4.088 0 015.064 2.293c.46-.163 1.26-.349 2.43-.404C8.76 1.831 9.14 1.819 12 1.819zM12 0C8.741 0 8.333.014 7.053.072 5.775.13 4.903.333 4.14.63a5.876 5.876 0 00-2.126 1.384A5.876 5.876 0 00.63 4.14C.333 4.903.13 5.775.072 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.058 1.278.261 2.15.558 2.913a5.876 5.876 0 001.384 2.126 5.876 5.876 0 002.126 1.384c.763.297 1.635.5 2.913.558C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c1.278-.058 2.15-.261 2.913-.558a5.876 5.876 0 002.126-1.384 5.876 5.876 0 001.384-2.126c.297-.763.5-1.635.558-2.913.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.278-.261-2.15-.558-2.913a5.876 5.876 0 00-1.384-2.126A5.876 5.876 0 0019.86.63C19.097.333 18.225.13 16.947.072 15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-              </svg>
-              <span>@mouhib_mh</span>
-            </a>
-          </div>
+          ${finalPageSignatureHtml}
 
           <div class="corner-lift-hint bottom-right" title="Tourner la page suivante" aria-hidden="true">
             <div class="corner-lift-triangle right"></div>
@@ -564,7 +580,6 @@
             </div>
             <div class="underside-watermark-title">FRATELLO FAST FOOD</div>
             <div class="underside-watermark-sub">SAVEURS AUTHENTIQUES</div>
-            <div class="underside-watermark-sig">MOUHIB MH · @mouhib_mh</div>
           </div>
         </div>
       `;

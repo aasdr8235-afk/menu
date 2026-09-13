@@ -2681,19 +2681,20 @@ noscript #preloader {
 }
 
 /* ==========================================================================
-   CREATOR MAKER'S MARK — LUXURY ART-DIRECTED IMPRINT
+   CREATOR MAKER'S MARK — LUXURY ART-DIRECTED IMPRINT (COVER & FINAL PAGE)
    ========================================================================== */
 .cover-footer-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
   max-width: 380px;
   z-index: 15;
   margin-top: auto;
 }
 
+.creator-imprint,
 .cover-maker-mark,
 .page-maker-mark {
   display: flex;
@@ -2701,41 +2702,59 @@ noscript #preloader {
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 3px;
+  gap: 2px;
   user-select: none;
   pointer-events: auto;
   z-index: 25;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
+.cover-imprint,
 .cover-maker-mark {
   margin-top: 8px;
 }
 
+.final-page-imprint,
 .page-maker-mark {
   margin-top: auto;
-  padding-top: 12px;
-  padding-bottom: 6px;
-  margin-bottom: 8px;
+  padding-top: 14px;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
   width: 100%;
   flex-shrink: 0;
 }
 
+.creator-ornament,
 .maker-mark-ornament {
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 0;
-  margin-bottom: 2px;
+  margin: 2px 0;
   opacity: 0.85;
 }
 
+.creator-ornament-svg,
 .maker-ornament-svg {
   display: block;
 }
 
+.creator-label {
+  font-family: var(--font-serif-luxury);
+  font-size: 0.72rem;
+  font-style: italic;
+  letter-spacing: 0.08em;
+  color: var(--gold-soft);
+  line-height: 1.1;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.creator-name,
 .maker-mark-name {
   font-family: var(--font-serif-classic);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.32em;
   text-transform: uppercase;
@@ -2747,6 +2766,7 @@ noscript #preloader {
   padding-left: 0.32em;
 }
 
+.creator-link,
 .maker-mark-link {
   display: inline-flex;
   align-items: center;
@@ -2755,12 +2775,17 @@ noscript #preloader {
   text-decoration: none !important;
   color: var(--cream-dim) !important;
   padding: 4px 12px;
-  min-height: 38px;
+  min-height: 36px;
   box-sizing: border-box;
   transition: color 0.25s ease, opacity 0.25s ease;
   cursor: pointer;
+  background: transparent !important;
 }
 
+.creator-link:link,
+.creator-link:visited,
+.creator-link:active,
+.creator-link:-webkit-any-link,
 .maker-mark-link:link,
 .maker-mark-link:visited,
 .maker-mark-link:active,
@@ -2769,27 +2794,32 @@ noscript #preloader {
   text-decoration: none !important;
 }
 
+.creator-link:hover,
+.creator-link:focus-visible,
 .maker-mark-link:hover,
 .maker-mark-link:focus-visible {
   color: var(--gold-bright) !important;
   text-decoration: none !important;
 }
 
+.creator-ig-icon,
 .maker-mark-ig-icon {
   color: var(--gold-pure);
-  opacity: 0.8;
+  opacity: 0.85;
   flex-shrink: 0;
   transition: opacity 0.25s ease, color 0.25s ease;
 }
 
+.creator-link:hover .creator-ig-icon,
 .maker-mark-link:hover .maker-mark-ig-icon {
   color: var(--gold-bright);
   opacity: 1;
 }
 
+.creator-link span,
 .maker-mark-link span {
   font-family: var(--font-serif-luxury);
-  font-size: 0.68rem;
+  font-size: 0.70rem;
   letter-spacing: 0.12em;
   color: inherit !important;
   font-style: italic;
@@ -2799,16 +2829,10 @@ noscript #preloader {
 
 /* Page Underside Watermark Signature */
 .underside-watermark-sig {
-  font-family: var(--font-serif-classic);
-  font-size: 0.54rem;
-  letter-spacing: 0.24em;
-  color: var(--gold-pure);
-  opacity: 0.45;
-  text-transform: uppercase;
-  margin-top: 6px;
+  display: none !important;
 }
 
-/* Mobile Art-Direction for Maker's Mark */
+/* Mobile Art-Direction for Creator Imprint */
 @media (max-width: 991px) {
   .cover-footer-wrap {
     gap: 6px;
@@ -2816,36 +2840,47 @@ noscript #preloader {
     margin-bottom: max(env(safe-area-inset-bottom, 0px), 2px);
   }
 
+  .cover-imprint,
   .cover-maker-mark {
     margin-top: 4px;
     gap: 2px;
   }
 
+  .final-page-imprint,
   .page-maker-mark {
+    margin-top: auto;
     padding-top: 8px;
     padding-bottom: 4px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     gap: 2px;
   }
 
+  .creator-label {
+    font-size: 0.66rem;
+  }
+
+  .creator-name,
   .maker-mark-name {
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     letter-spacing: 0.26em;
     padding-left: 0.26em;
   }
 
+  .creator-link,
   .maker-mark-link {
     min-height: 44px;
     padding: 6px 12px;
   }
 
+  .creator-link span,
   .maker-mark-link span {
-    font-size: 0.62rem;
+    font-size: 0.64rem;
     letter-spacing: 0.10em;
   }
 
+  .creator-ornament-svg,
   .maker-ornament-svg {
-    width: 42px;
+    width: 60px;
   }
 }
 
@@ -2855,23 +2890,31 @@ noscript #preloader {
     gap: 4px;
   }
 
+  .final-page-imprint,
   .page-maker-mark {
     padding-top: 6px;
     padding-bottom: 2px;
     margin-bottom: 4px;
   }
 
+  .creator-label {
+    font-size: 0.62rem;
+  }
+
+  .creator-name,
   .maker-mark-name {
     font-size: 0.68rem;
     letter-spacing: 0.22em;
     padding-left: 0.22em;
   }
 
+  .creator-link span,
   .maker-mark-link span {
     font-size: 0.58rem;
   }
 
+  .creator-ornament-svg,
   .maker-ornament-svg {
-    width: 36px;
+    width: 50px;
   }
 }
